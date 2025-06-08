@@ -1,8 +1,5 @@
-interface ButtonProps {
-  action: () => void;
-  buttonLabel: string;
-  buttonBackgroundColor: string;
-}
+
+import { ButtonProps}  from "@/interface/index";
 
 const Button = ({ action, buttonLabel, buttonBackgroundColor }: ButtonProps) => {
   return (

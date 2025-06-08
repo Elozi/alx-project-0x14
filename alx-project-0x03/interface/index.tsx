@@ -1,12 +1,8 @@
+import { ReactNode } from 'react';
+
 export interface CardProps {
     title: string;
     content: string;
-  }
-  export interface ButtonProps {
-    size: "small" | "medium" | "large";
-    shape: "rounded-sm" | "rounded-md" | "rounded-full";
-    label: string;
-    onClick?: () => void;
   }
   export interface PostProps {
     title: string;
@@ -22,3 +18,14 @@ export interface CardProps {
     };
   }
   
+  export interface PageRouteProps {
+    pageRoute: string;
+  }
+  export interface ButtonProps {
+    action: () => void;
+    buttonLabel: string;
+    buttonBackgroundColor: string;
+  }
+  export interface LayoutProps {
+    children: ReactNode;
+  }
