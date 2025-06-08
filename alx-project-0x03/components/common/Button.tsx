@@ -1,5 +1,5 @@
 
-import { ButtonProps}  from "@/interface/index";
+import { ButtonProps } from "@/interface";
 
 const Button = ({ buttonLabel, buttonSize, buttonBackgroundColor, action }: ButtonProps) => {
 
