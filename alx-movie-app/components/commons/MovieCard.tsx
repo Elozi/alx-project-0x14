@@ -1,11 +1,19 @@
-import { ButtonProps } from "@/interfaces";
+import { MovieProps } from "@/interfaces"
+import Image from "next/image"
 
-const MovieCard: React.FC<ButtonProps> = ({ title, action }) => {
+const MovieCard: React.FC<MovieProps> = ({ title, posterImage, releaseYear }) => {
   return (
-    <button onClick={action} className="px-8 py-2 border-2 border-[#E2D609] rounded-full hover:bg-[#E2D609] hover:text-black transition-colors duration-300">
-      {title}
-    </button>
+    <div className="h-[563px]">
+      <div>
+        <Image className="h-[430px] w-full rounded-md hover:cursor-pointer" src={posterImage} width={100} height={100} alt={title} />
+
+      </div>
+      <div className="flex justify-between py-4">
+        <p className="text-xl font-bold">{title}</p>
+        <p className="text-xl text-[#E2D609]">{releaseYear}</p>
+      </div>
+    </div>
   )
 }
 
-export default MovieCard;
+export default MovieCard

@@ -1,11 +1,14 @@
-import { ButtonProps } from "@/interfaces";
-
-const Loading: React.FC<ButtonProps> = ({ title, action }) => {
-  return (
-    <button onClick={action} className="px-8 py-2 border-2 border-[#E2D609] rounded-full hover:bg-[#E2D609] hover:text-black transition-colors duration-300">
-      {title}
-    </button>
-  )
-}
-
-export default Loading;
+const Loading: React.FC = () => {
+    return (
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 flex flex-col justify-center items-center">
+          <h1 className="text-4xl md:text-6xl font-semibold text-white mb-4 animate-pulse">
+            Loading...
+          </h1>
+          <p className="text-lg text-gray-300">Please wait, we&apos;re getting next set of movies ready for you.</p>
+        </div>
+      </div>
+    );
+  };
+  
+  export default Loading;
