@@ -1,40 +1,45 @@
-import Button from "@/components/common/Button";
+import Button from "@/components/commons/Button";
 import { useRouter } from "next/router";
-import { PageRouteProps } from "@/interface/index";
-
-export default function Home() {
+const Home: React.FC = () => {
   const router = useRouter();
 
-  // Imperative routing
-  const routeToNextPage = ({ pageRoute }: PageRouteProps) => {
-    router.push(pageRoute, undefined, { shallow: false });
-  };
-
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center text-center">
-      <h1> Welcome to Splash App </h1>
-      <p className="text-lg text-gray-600 mb-8">
-        Your one-stop platform for everything AI you need. Start exploring by
-        navigating to our features below.
-      </p>
+    <div className="bg-[#171D22] text-white">
+      <section
+        className="h-screen bg-cover bg-center"
+        style={{
+          backgroundImage:
+            'url("https://themebeyond.com/html/movflx/img/bg/breadcrumb_bg.jpg")',
+        }}
+      >
+        <div className="bg-black bg-opacity-50 h-full flex flex-col justify-center items-center text-center">
+          <h1 className="text-5xl md:text-7xl font-bold mb-8">
+            Discover Your Next Favorite{" "}
+            <span className="text-[#E2D609]">Movie</span>
+          </h1>
+          <p className="text-lg md:text-2xl mb-8 max-w-2xl">
+            Explore the latest blockbuster movies, critically acclaimed films,
+            and your personal favorites – all in one place.
+          </p>
+          <Button
+            title="Browse Movies"
+            action={() => router.push("/movies", undefined, { shallow: false })}
+          />
+        </div>
+      </section>
 
-      <div className="flex gap-6">
-        <Button
-          action={() => routeToNextPage({ pageRoute: '/generate-text-ai' })}
-          buttonLabel="Generate Text"
-          buttonBackgroundColor="blue"
-        />
-        <Button
-          action={() => routeToNextPage({ pageRoute: '/text-to-image' })}
-          buttonLabel="Text to Image"
-          buttonBackgroundColor="green"
-        />
-        <Button
-          action={() => routeToNextPage({ pageRoute: '/counter-app' })}
-          buttonLabel="Contact us"
-          buttonBackgroundColor="orange"
-        />
-      </div>
+      <section className="py-16 px-8 md:px-44 bg-[#121018] text-center">
+        <h2 className="text-3xl md:text-5xl font-semibold mb-8">
+          Join CineSeek Now!
+        </h2>
+        <p className="text-lg md:text-2xl mb-12">
+          Sign up today to get access to the latest movies, exclusive content,
+          and personalized movie recommendations.
+        </p>
+        <Button title="Get Started" />
+      </section>
     </div>
   );
-}
+};
+
+export default Home;
